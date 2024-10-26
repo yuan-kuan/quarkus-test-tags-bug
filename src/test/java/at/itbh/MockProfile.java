@@ -5,10 +5,6 @@ import java.util.Collections;
 import java.util.Set;
 
 public class MockProfile implements QuarkusTestProfile {
-  // @Override
-  // public Set<Class<?>> getEnabledAlternatives() {
-  // return Collections.singleton(MockVodService.class);
-  // }
 
   public static class NoTags implements QuarkusTestProfile {
     @Override
@@ -27,6 +23,12 @@ public class MockProfile implements QuarkusTestProfile {
     public Set<String> tags() {
       return Set.of("a");
     }
+    
+    @Override
+    public Set<Class<?>> getEnabledAlternatives() {
+      return Collections.singleton(MockService.class);
+    }
+    
   }
   
   public static class BTag implements QuarkusTestProfile {
