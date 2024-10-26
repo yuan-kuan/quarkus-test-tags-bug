@@ -41,6 +41,11 @@ public class MockProfile implements QuarkusTestProfile {
     public Set<String> tags() {
       return Set.of("b");
     }
+    @Override
+    public Set<Class<?>> getEnabledAlternatives() {
+      return Collections.emptySet();
+    }
+    
   }
 
 }
